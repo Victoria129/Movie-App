@@ -9,6 +9,7 @@ header {
   left: 0;
   width: 100%;
   height: 60px;
+  z-index: 1;
 }
 
 .nav-container {
@@ -52,13 +53,100 @@ nav a:hover {
 }
 
 .main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 60px;
+  margin: 20px 15px 200px 5px;
+}
+
+.main-container-sup {
+  width: 270px;
+  border: 5px solid rgb(145, 93, 93);
+  margin-left: 10px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+.movie-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.like-movies {
+  width: 40px;
+  margin-right: 10px;
+  transition: 1s;
+  margin-bottom: 10px;
+}
+
+.like-movies i {
+  font-size: 24px;
+  margin-top: 10px;
 }
 
 .movie-banner img {
-  width: 300px;
+  width: 250px;
   height: 300px;
+  border: 3px solid rgb(121, 94, 94);
+  border-radius: 15px;
+}
+
+.movie-banner img:hover {
+  border: 5px solid rgb(227, 30, 30);
+}
+
+.details-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-info h2 {
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin: 10px 10px;
+}
+
+.like-doc {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: rgb(255, 42, 0);
+}
+
+.fa-solid {
+  color: red;
+}
+
+.comment-rese {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+}
+
+.comment-rese button {
+  background: #fff;
+  border: 1px solid blue;
+  color: blue;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  transition: 0.5s;
+}
+
+.comment-rese button:hover {
+  background: blue;
+  color: #fff;
 }
 
 footer {
