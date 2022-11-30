@@ -7,6 +7,7 @@ const fillDetails = async (id) => {
   return list;
 };
 
+//Append new comments to the comments ul.
 const addCommentEvent = async () => {
   const commentForm = document.querySelector('.new-comment-form');
   const submitComment = document.querySelector('.submit-btn');
@@ -31,6 +32,7 @@ const addCommentEvent = async () => {
   });
 };
 
+//Close popup function.
 const addClosePopUpevent = () => {
   const closeBtn = document.querySelector('.mclose-btn');
   closeBtn.addEventListener('click', () => {
@@ -39,6 +41,7 @@ const addClosePopUpevent = () => {
   });
 };
 
+//Create Popup
 export const createPopUpDetails = (details) => {
   const projectModal = document.createElement('div');
   projectModal.className = 'movie-pop-up';
