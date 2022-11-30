@@ -1,7 +1,8 @@
+import { addCommentPopupEvent } from './comments.js';
+
 const getMovieData = async () => {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=2');
   const myJson = await response.json();
-  console.log(myJson.length);
   const totalMovies = document.querySelector('#length-of-move');
 
   totalMovies.insertAdjacentHTML('afterend', `(${myJson.length})`);
@@ -39,12 +40,14 @@ const getMovieData = async () => {
             <p><span id="_${movieId}">${(4)}</span>  likes</p>
         </div>
         <div class="comment-rese">
-            <button id="comment" data="_${movieId}">comment</button>
+            <button class="commentBtn" id="${movieId}" data="_${movieId}">comment</button>
             <button id="reservation" data="${movieId}">Reservation</button>
         </div>
     </div>
 `;
   }
+
+  addCommentPopupEvent();
 };
 
 export default getMovieData;
