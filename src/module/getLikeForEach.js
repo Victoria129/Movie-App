@@ -9,7 +9,7 @@ const getLikeForEach = async (movieId) => {
     }
   });
 
-  return (like);
+  return like;
 };
 
 export default getLikeForEach;

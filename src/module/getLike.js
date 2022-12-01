@@ -7,7 +7,6 @@ const getLike = async () => {
   );
   const list = await response.json();
   return list;
-  //  localStorage.setItem('newLike', JSON.stringify(list));
 };
 
 export default getLike;

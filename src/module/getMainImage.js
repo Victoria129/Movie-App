@@ -73,8 +73,6 @@ const getMovieData = async () => {
       });
     });
   }
-
-  addCommentPopupEvent();
 };
-
+setTimeout(addCommentPopupEvent, 3000);
 export default getMovieData;
