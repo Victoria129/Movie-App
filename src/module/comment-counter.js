@@ -1,6 +1,6 @@
-const commentCounter = () => {
+const commentsCounter = () => {
   const comments = document.querySelectorAll('.comment-li');
   return comments.length;
 };
 
-export default commentCounter;
+export default commentsCounter;
