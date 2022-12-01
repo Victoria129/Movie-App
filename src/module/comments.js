@@ -1,5 +1,5 @@
 import { generateComment, addComment } from './display-comments.js';
-import commentCounter from './comment-counter.js';
+import commentCounter  from './comment-counter.js';
 
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';
@@ -119,8 +119,8 @@ const displayPoUp = async (id) => {
 };
 
 export const addCommentPopupEvent = () => {
-  const commentBtns = document.querySelectorAll('.commentBtn');
-  commentBtns.forEach((btn) => btn.addEventListener('click', (e) => {
+  const commentBtn = document.querySelectorAll('.commentBtn');
+  commentBtn.forEach((btn) => btn.addEventListener('click', (e) => {
     e.preventDefault();
     displayPoUp(btn.id);
   }));

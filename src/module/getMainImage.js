@@ -2,7 +2,7 @@ import { addCommentPopupEvent } from './comments.js';
 import postLike from './postLike.js';
 import getLikeForEach from './getLikeForEach.js';
 
-const getMovieData = async () => {
+export const getMovieData = async () => {
   const response = await fetch('https://api.tvmaze.com/search/shows?q=3');
   const myJson = await response.json();
   const totalMovies = document.querySelector('#length-of-move');
@@ -22,10 +22,8 @@ const getMovieData = async () => {
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
     }
-    let numLike = 0;
-    const NumLike = getLikeForEach(movieId);
-    NumLike.then((num) => {
-      numLike = num;
+    
+    const NumLike = await getLikeForEach(movieId);
 
       mainContainer.innerHTML += `
     <div class="main-container-sup">
@@ -43,7 +41,7 @@ const getMovieData = async () => {
             </div>
         </div>
         <div class="like-doc">
-            <p><span id="_${movieId}">${numLike}</span>  likes</p>
+            <p><span id="_${movieId}">${NumLike}</span>  likes</p>
         </div>
         <div class="comment-rese">
             <button class="commentBtn" id="${movieId}" data="_${movieId}">comment</button>
@@ -71,8 +69,7 @@ const getMovieData = async () => {
           }
         });
       });
-    });
   }
+  addCommentPopupEvent();
 };
-setTimeout(addCommentPopupEvent, 3000);
 export default getMovieData;
