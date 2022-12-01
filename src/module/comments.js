@@ -1,6 +1,7 @@
 import { generateComment, addComment } from './display-comments.js';
 import commentsCounter from './comment-counter.js';
 
+const displayPop = document.querySelector('.for-close-poup');
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';
   const list = await fetch(`${baseApi}${id}`).then((response) => response.json());
@@ -38,6 +39,7 @@ const addClosePopUpevent = () => {
   closeBtn.addEventListener('click', () => {
     const popupModal = document.querySelector('.modal-wraper');
     popupModal.style.display = 'none';
+    displayPop.classList.remove('hide');
   });
 };
 
@@ -47,6 +49,7 @@ export const createPopUpDetails = (details) => {
   projectModal.className = 'movie-pop-up';
 
   projectModal.innerHTML = `
+  <div class="mani-Pop-up">
   <div class="mclose-btn">
   <span class="close-span">X</span>  
   </div>
@@ -68,16 +71,17 @@ export const createPopUpDetails = (details) => {
   
   <div class = "movie-attributes">
       <ul>
-      <li><span>Name:</span>${details.name}</li>
-      <li><span>Language:</span>${details.language}</li>
+      <li><span>Name:  </span>${details.name}</li>
+      <li><span>Language:  </span>${details.language}</li>
       </ul>
       <ul>
-      <li><span>Genre:</span>${details.genres[0]}</li>
-      <li><span>Premiered:</span>${details.premiered}</li>
+      <li><span>Genre:  </span>${details.genres[0]}</li>
+      <li><span>Premiered:  </span>${details.premiered}</li>
       </ul>
   </div>
-  
+  <div class="comm-node">
   <h2>Comments<span class="comment-count"></span></h2>
+  </div>
   <div class= "comment-display">
   </div>
   
@@ -90,6 +94,7 @@ export const createPopUpDetails = (details) => {
   <textarea cols="30" rows="10" placeholder="comment" id="comment" required></textarea>
   <button type="submit" class="submit-btn" id="${details.id}">Add Comment</button>
   </form>
+  </div>
   </div>
   </div>
 `;
@@ -123,5 +128,6 @@ export const addCommentPopupEvent = () => {
   commentBtn.forEach((btn) => btn.addEventListener('click', (e) => {
     e.preventDefault();
     displayPoUp(btn.id);
+    displayPop.classList.add('hide');
   }));
 };

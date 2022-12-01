@@ -13,7 +13,7 @@ header {
 }
 
 .nav-container {
-  background-color: rgb(138, 138, 76);
+  background-color: rgb(21, 21, 20);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -100,9 +100,9 @@ nav a:hover {
 }
 
 .modal-image {
-  /* border: 1px solid black; */
+
   border-radius: 10px;
-  width: 17rem;
+  min-width: 17rem;
   height: 17rem;
 }
 
@@ -168,6 +168,16 @@ nav a:hover {
   transition: 0.5s;
 }
 
+.add-comment button {
+  background: #fff;
+  padding: 8px 12px;
+  border: 1px solid blue;
+  width: auto;
+  margin: 5px 0 40px 0;
+  font-size: 18px;
+  border-radius: 15px;
+}
+
 .comment-rese button:hover {
   background: blue;
   color: #fff;
@@ -182,7 +192,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(228, 37, 37);
+  background: rgb(40, 38, 38);
 }
 
 .footer p {
@@ -198,53 +208,94 @@ footer {
 
 .modal-wraper {
   display: none;
-  justify-content: center;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.4);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 2% 3%;
-  overflow: scroll;
-  z-index: 2;
-  height: 100%;
-}
-
-.movie-pop-up {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  justify-content: center;
-  box-shadow: 5px 5px 25px 5px;
-  text-align: center;
-  padding: 1rem;
-  overflow: scroll;
-  margin: 3% 20%;
-  background-color: rgba(158, 121, 121, 0.949);
 }
 
 .popup-top-section {
+  display: block;
+}
+
+.mani-Pop-up {
+  position: relative;
+  width: 95%;
+  border: 5px solid rgb(34, 30, 30);
+  margin: 20px auto;
+  border-radius: 15px;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  gap: 2rem;
-  padding: 1% 2%;
+  grid-template-rows: auto;
+  background-color: rgb(242, 231, 231);
 }
 
 .mclose-btn {
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  align-self: end;
-  cursor: pointer;
-  border-radius: 5px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  top: 30px;
+  right: 30px;
+  border: 1px solid black;
+  font-size: 30px;
 }
 
-.close-span {
-  font-size: 30px;
+.mclose-btn:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.modal-image {
+  max-width: 500px;
+  margin: 70px auto;
 }
 
 .comment-li {
   margin: 0.6rem 0;
+}
+
+.comm-node {
+  margin: 5px auto;
+  font-size: 16px;
+  color: red;
+}
+
+.comment-display {
+  width: auto;
+  background-color: white;
+  font-size: 14px;
+  margin: 0 auto;
+  border: black solid 1px;
+}
+
+.comment-display li {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.comment-display li:nth-child(even) {
+  background-color: rgb(232, 218, 218);
+}
+
+.movie-attributes span {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(237, 25, 25);
+}
+
+.modal-head {
+  padding-top: 10px;
+  margin: 30px auto;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .comment-li span {
@@ -254,11 +305,14 @@ footer {
 }
 
 #comments-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 1rem 20rem;
+  width: 100%;
+  display: block;
+  background: #fff;
+}
+
+.comment-display ul:nth-child(even) {
+  border: 1px solid red;
+  background: rgb(142, 142, 131);
 }
 
 .add-comment {
@@ -266,8 +320,13 @@ footer {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+}
 
-  /* border: 2px solid red; */
+.add-comment h2 {
+  margin: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .new-comment-form {
@@ -275,17 +334,31 @@ footer {
   flex-direction: column;
   gap: 1rem;
   width: 50%;
-
-  /* border: 2px solid rgb(15, 155, 40); */
 }
 
 .new-comment-form textarea {
-  border-radius: 5px;
   resize: vertical;
+  border-radius: 15px;
+  padding: 12px;
+}
+
+.add-comment input {
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 16px;
 }
 
 .comments-form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.add-comment button:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.hide {
+  display: none;
 }
