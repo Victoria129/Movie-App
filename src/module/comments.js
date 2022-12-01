@@ -1,5 +1,5 @@
 import { generateComment, addComment } from './display-comments.js';
-import commentsCounter from './comment-counter.js';
+import commentCounter from './comment-counter.js';
 
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';
@@ -25,7 +25,7 @@ const addCommentEvent = async () => {
     commentsDiv.innerHTML = '';
     commentsDiv.append(commentul);
 
-    const commentCount = commentsCounter();
+    const commentCount = commentCounter();
     commentCountSpan.textContent = `(${commentCount})`;
 
     commentForm.reset();
@@ -110,7 +110,7 @@ const displayPoUp = async (id) => {
   const commentul = await generateComment(id);
   commentsDiv.append(commentul);
 
-  const commentCount = commentsCounter();
+  const commentCount = commentCounter();
   commentCountSpan.textContent = `(${commentCount})`;
 
   popupModal.style.display = 'flex';
