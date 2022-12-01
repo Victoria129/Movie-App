@@ -12,4 +12,8 @@ const getLikeForEach = async (movieId) => {
   return like;
 };
 
+export const numrand = () => {
+  let value = Math.floor(Math.random() * 10);
+  return value;
+}
 export default getLikeForEach;
