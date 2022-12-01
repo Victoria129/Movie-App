@@ -1,5 +1,5 @@
 import { generateComment, addComment } from './display-comments.js';
-import commentCounter  from './comment-counter.js';
+import commentCounter from './comment-counter.js';
 
 const fillDetails = async (id) => {
   const baseApi = 'https://api.tvmaze.com/shows/';

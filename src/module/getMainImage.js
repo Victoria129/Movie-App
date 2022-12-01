@@ -22,10 +22,10 @@ export const getMovieData = async () => {
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
     }
-    
-    const NumLike = await getLikeForEach(movieId);
 
-      mainContainer.innerHTML += `
+    const NumLike = getLikeForEach(movieId);
+
+    mainContainer.innerHTML += `
     <div class="main-container-sup">
         <div class="movie-banner">
             <img class="movie-banner-img"
@@ -50,25 +50,25 @@ export const getMovieData = async () => {
     </div>
 `;
 
-      const likeBtn = document.querySelectorAll('.liked_btn');
-      likeBtn.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          btn.classList.toggle('fa-regular');
-          btn.classList.toggle('fa-solid');
-          if (btn.classList.contains('fa-solid')) {
-            const likes = document.getElementById(`_${e.target.id}`);
-            let currentLike = Number(likes.innerHTML);
-            currentLike += 1;
-            likes.innerHTML = currentLike;
-            postLike(e.target.id);
-          } else {
-            const likes = document.getElementById(`_${e.target.id}`);
-            let currentLike = Number(likes.innerHTML);
-            currentLike -= 1;
-            likes.innerHTML = currentLike;
-          }
-        });
+    const likeBtn = document.querySelectorAll('.liked_btn');
+    likeBtn.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        btn.classList.toggle('fa-regular');
+        btn.classList.toggle('fa-solid');
+        if (btn.classList.contains('fa-solid')) {
+          const likes = document.getElementById(`_${e.target.id}`);
+          let currentLike = Number(likes.innerHTML);
+          currentLike += 1;
+          likes.innerHTML = currentLike;
+          postLike(e.target.id);
+        } else {
+          const likes = document.getElementById(`_${e.target.id}`);
+          let currentLike = Number(likes.innerHTML);
+          currentLike -= 1;
+          likes.innerHTML = currentLike;
+        }
       });
+    });
   }
   addCommentPopupEvent();
 };
