@@ -1,7 +1,9 @@
 import { addCommentPopupEvent } from './comments.js';
+import postLike from './postLike.js';
+import getLikeForEach from './getLikeForEach.js';
 
 const getMovieData = async () => {
-  const response = await fetch('https://api.tvmaze.com/search/shows?q=2');
+  const response = await fetch('https://api.tvmaze.com/search/shows?q=3');
   const myJson = await response.json();
   const totalMovies = document.querySelector('#length-of-move');
 
@@ -20,8 +22,12 @@ const getMovieData = async () => {
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
     }
+    let numLike = 0;
+    const NumLike = getLikeForEach(movieId);
+    NumLike.then((num) => {
+      numLike = num;
 
-    mainContainer.innerHTML += `
+      mainContainer.innerHTML += `
     <div class="main-container-sup">
         <div class="movie-banner">
             <img class="movie-banner-img"
@@ -37,7 +43,7 @@ const getMovieData = async () => {
             </div>
         </div>
         <div class="like-doc">
-            <p><span id="_${movieId}">${(4)}</span>  likes</p>
+            <p><span id="_${movieId}">${numLike}</span>  likes</p>
         </div>
         <div class="comment-rese">
             <button class="commentBtn" id="${movieId}" data="_${movieId}">comment</button>
@@ -45,9 +51,28 @@ const getMovieData = async () => {
         </div>
     </div>
 `;
+
+      const likeBtn = document.querySelectorAll('.liked_btn');
+      likeBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          btn.classList.toggle('fa-regular');
+          btn.classList.toggle('fa-solid');
+          if (btn.classList.contains('fa-solid')) {
+            const likes = document.getElementById(`_${e.target.id}`);
+            let currentLike = Number(likes.innerHTML);
+            currentLike += 1;
+            likes.innerHTML = currentLike;
+            postLike(e.target.id);
+          } else {
+            const likes = document.getElementById(`_${e.target.id}`);
+            let currentLike = Number(likes.innerHTML);
+            currentLike -= 1;
+            likes.innerHTML = currentLike;
+          }
+        });
+      });
+    });
   }
-
-  addCommentPopupEvent();
 };
-
+setTimeout(addCommentPopupEvent, 3000);
 export default getMovieData;
