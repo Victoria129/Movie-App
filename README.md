@@ -7,14 +7,14 @@
 In this project, we will build a basic website that displays a number of movies. A user can like, or comment on a movie they choose. We will achieve that by using JavaScript to dynamically modify the DOM.
 
 
-- [🛠 Built With]
+## 🛠 Built With
 
 - Html
 - css
 - Javascript
 - Visual Studio Code
 
-- [🚀 Live Demo]()
+ [🚀 Live Demo](https://victoria129.github.io/Javascript-Group-Capstone/dist/)
 
 ## Getting Started
 
