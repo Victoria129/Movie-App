@@ -11,3 +11,6 @@ export const countComment = async (id) => {
   const comment = await countCom.json();
   return comment;
 }
+
+export default commentCounter;
+
