@@ -1,56 +1,18 @@
-/**
- * @jest-environment jsdom
- */
-import commentCounter from '../module/comment-counter.js';
-// const commentCounter = require('../modules/comment-counter.js')
+import { countComment } from '../module/comment-counter.js';
 
-describe('Count No of comments on the DOM', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    document.body.innerHTML = `
-     <div class= "comment-display">
-     </div>
-     `;
+describe('Add tests for comments counter', () => {
+  it('Two Comments in a movie - Output: 2', async () => {
+    const commentsNumber = await countComment(49234);
+    expect(commentsNumber.length).toEqual(2);
   });
 
-  // eslint-disable-next-line
-   const createCommentHtml = ({ creation_date, comment, username }) => {
-    // eslint-disable-next-line
-     const creationDate = creation_date;
-    const commentli = document.createElement('li');
-    commentli.className = 'comment-li';
-    commentli.innerHTML = `
-      <span>${username}<span><span>${comment}<span><span>${creationDate}<span>
-     `;
-    return commentli;
-  };
+  it('Six Comments in a movie - Output: 6', async () => {
+    const commentsNumber = await countComment(6962);
+    expect(commentsNumber.length).toEqual(6);
+  });
 
-  const item1Comments = [{
-    username: 'Jake',
-    comment: 'It tastes nice',
-    creationDate: '24/11/2022',
-  },
-  {
-    username: 'mike',
-    comment: 'It was nice',
-    creationDate: '22/11/2022',
-  },
-  {
-    username: 'Val',
-    comment: 'It was good',
-    creationDate: '1/11/2022',
-  },
-  ];
-
-  test('Get correct no of comments greater than 1', () => {
-    const displayComments = () => {
-      const cmtSection = document.querySelector('.comment-display');
-      item1Comments.forEach((comment) => {
-        cmtSection.append(createCommentHtml(comment));
-      });
-    };
-    displayComments();
-    const result = commentCounter();
-    expect(result).toBe(3);
+  it('One Comments in a movie - Output: 1', async () => {
+    const commentsNumber = await countComment(36306);
+    expect(commentsNumber.length).toEqual(undefined);
   });
 });

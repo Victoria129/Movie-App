@@ -100,10 +100,11 @@ nav a:hover {
 }
 
 .modal-image {
-
-  border-radius: 10px;
-  min-width: 17rem;
-  height: 17rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 70px auto 40px auto;
 }
 
 .movie-banner img {
@@ -114,8 +115,8 @@ nav a:hover {
 }
 
 .modal-image img {
-  width: 130%;
-  height: 130%;
+  width: 300px;
+  height: 300px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -208,6 +209,7 @@ footer {
 
 .modal-wraper {
   display: none;
+  width: 100%;
 }
 
 .popup-top-section {
@@ -235,6 +237,7 @@ footer {
   right: 30px;
   border: 1px solid black;
   font-size: 30px;
+  border-radius: 8px;
 }
 
 .mclose-btn:hover {
@@ -242,19 +245,20 @@ footer {
   color: #fff;
 }
 
-.modal-image {
-  max-width: 500px;
-  margin: 70px auto;
-}
-
 .comment-li {
   margin: 0.6rem 0;
+}
+
+.summary {
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .comm-node {
   margin: 5px auto;
   font-size: 16px;
-  color: red;
+  color: rgb(201, 95, 95);
 }
 
 .comment-display {
@@ -284,13 +288,13 @@ footer {
 }
 
 .movie-attributes span {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   color: rgb(237, 25, 25);
 }
 
 .modal-head {
-  padding-top: 10px;
+  padding: 20px;
   margin: 30px auto;
   font-size: 24px;
   font-family: 'Times New Roman', Times, serif;
