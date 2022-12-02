@@ -59,6 +59,20 @@
 
 - [Live Demo Link](https://victoria129.github.io/Javascript-Group-Capstone/dist/)
 
+## Project Link
+
+-[Project Repo link](https://github.com/Victoria129/Javascript-Group-Capstone)
+
+## Kanban board link
+
+- [Kanban-Board link](https://github.com/Victoria129/Javascript-Group-Capstone/projects/1)
+
+## Intersting Pull Requests
+
+- [pull-request-one](https://github.com/Victoria129/Javascript-Group-Capstone/pull/31)
+- [pull-request-two](https://github.com/Victoria129/Javascript-Group-Capstone/pull/31)
+- [pull-request-three](https://github.com/Victoria129/Javascript-Group-Capstone/pull/25)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -92,13 +106,19 @@ npm i -D gh-pages
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Girma Tarekegn**
 
 - GitHub: [@girma336](https://github.com/girma336)
 
-👤 **Author2**
+👤 **Victoria Tumwebaze**
 
 - GitHub: [@Victoria129](https://github.com/Victoria129)
+
+## Project presentation Videos
+
+-[Girma's-presentation-video](https://drive.google.com/file/d/1NPt7_HNK5izrPY49gR0sxKCX193w4rCh/view?usp=share_link)
+
+-[Victoria's-presentation-video](https://drive.google.com/file/d/1ZPuiarcV1XwbNCgzhqt_ex-x_E5CiuW1/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,7 +144,7 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -192,7 +192,7 @@ footer {
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: rgb(40, 38, 38);
 }
 
@@ -201,6 +201,7 @@ footer {
   font-family: 'Times New Roman', Times, serif;
   font-size: 16px;
   color: #fff;
+  margin-left: 24px;
 }
 
 .footer p:hover {
@@ -210,10 +211,18 @@ footer {
 .modal-wraper {
   display: none;
   width: 100%;
+  position: absolute;
+  top: 0;
+  overflow: scroll;
+  height: auto;
+}
+.modal-wraper::-webkit-scrollbar {
+  width: 8px;
 }
 
 .popup-top-section {
   display: block;
+  overflow: visible;
 }
 
 .mani-Pop-up {
@@ -225,6 +234,9 @@ footer {
   display: grid;
   grid-template-rows: auto;
   background-color: rgb(242, 231, 231);
+  z-index: 10;
+  opacity: 1;
+  overflow-y: auto;
 }
 
 .mclose-btn {
@@ -364,5 +376,6 @@ footer {
 }
 
 .hide {
-  display: none;
+  opacity: 0.3;
+  z-index: 1;
 }
