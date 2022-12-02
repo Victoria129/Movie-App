@@ -65,7 +65,7 @@
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
-1. clone the project from link: https://github.com/Victoria129/Javascript-Group-Capstone.git
+1. clone the project from link: https://github.com/Victoria129/Javascript-Group-Capstone.git by using git clone (link).
 2. open it on ur vs code and start using it. 
 
 
@@ -102,7 +102,9 @@ npm i -D gh-pages
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🔭 Future Features <a name="future-features"></a>
 
+- [ ] **[Reservation_Popup]**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
