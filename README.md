@@ -14,7 +14,7 @@ In this project, we will build a basic website that displays a number of movies.
 - Javascript
 - Visual Studio Code
 
-- [🚀 Live Demo]()
+- [🚀 Live Demo](https://Victoria129.github.io/Javascript-Group-Capstone)
 
 ## Getting Started
 

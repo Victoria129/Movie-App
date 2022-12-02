@@ -4,7 +4,7 @@
   "description": "This project has been created using **webpack-cli**, you can now run",
   "private": true,
   "scripts": {
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "test": "jest",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
