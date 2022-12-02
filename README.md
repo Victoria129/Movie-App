@@ -116,7 +116,7 @@ npm i -D gh-pages
 
 ## Project presentation Videos
 
--[Girma's-presentation-video](https://drive.google.com/file/d/1NPt7_HNK5izrPY49gR0sxKCX193w4rCh/view?usp=share_link)
+-[Girma's-presentation-video](https://github.com/Victoria129/Javascript-Group-Capstone)
 
 -[Victoria's-presentation-video](https://drive.google.com/file/d/1ZPuiarcV1XwbNCgzhqt_ex-x_E5CiuW1/view)
 
