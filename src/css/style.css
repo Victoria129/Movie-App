@@ -216,6 +216,7 @@ footer {
   overflow: scroll;
   height: auto;
 }
+
 .modal-wraper::-webkit-scrollbar {
   width: 8px;
 }
@@ -253,7 +254,7 @@ footer {
 }
 
 .mclose-btn:hover {
-  background-color: black;
+  cursor: pointer;
   color: #fff;
 }
 
