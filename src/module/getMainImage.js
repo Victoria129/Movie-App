@@ -1,9 +1,8 @@
 import { addCommentPopupEvent } from './comments.js';
 import postLike from './postLike.js';
-import getLikeForEach from './getLikeForEach.js';
-import { numrand  } from './getLikeForEach.js';
+import getLikeForEach, { numrand } from './getLikeForEach.js';
 
-const getMovieData = async (num) => {
+const getMovieData = async () => {
   const response = await fetch(`https://api.tvmaze.com/search/shows?q=${numrand()}`);
   const myJson = await response.json();
   const totalMovies = document.querySelector('#length-of-move');
@@ -28,7 +27,7 @@ const getMovieData = async (num) => {
     let numLike = 0;
     getLikeForEach(movieId).then((num) => {
       numLike = num;
-    mainContainer.innerHTML += `
+      mainContainer.innerHTML += `
     <div class="main-container-sup">
         <div class="movie-banner">
             <img class="movie-banner-img"
@@ -53,28 +52,27 @@ const getMovieData = async (num) => {
     </div>
 `;
 
-    const likeBtn = document.querySelectorAll('.liked_btn');
-    likeBtn.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        btn.classList.toggle('fa-regular');
-        btn.classList.toggle('fa-solid');
-        if (btn.classList.contains('fa-solid')) {
-          const likes = document.getElementById(`_${e.target.id}`);
-          let currentLike = Number(likes.innerHTML);
-          currentLike += 1;
-          likes.innerHTML = currentLike;
-          postLike(e.target.id);
-        } else {
-          const likes = document.getElementById(`_${e.target.id}`);
-          let currentLike = Number(likes.innerHTML);
-          currentLike -= 1;
-          likes.innerHTML = currentLike;
-        }
+      const likeBtn = document.querySelectorAll('.liked_btn');
+      likeBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          btn.classList.toggle('fa-regular');
+          btn.classList.toggle('fa-solid');
+          if (btn.classList.contains('fa-solid')) {
+            const likes = document.getElementById(`_${e.target.id}`);
+            let currentLike = Number(likes.innerHTML);
+            currentLike += 1;
+            likes.innerHTML = currentLike;
+            postLike(e.target.id);
+          } else {
+            const likes = document.getElementById(`_${e.target.id}`);
+            let currentLike = Number(likes.innerHTML);
+            currentLike -= 1;
+            likes.innerHTML = currentLike;
+          }
+        });
       });
-    });
-   }).then(addCommentPopupEvent);
+    }).then(addCommentPopupEvent);
   }
-
 };
 
 export default getMovieData;

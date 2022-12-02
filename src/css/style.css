@@ -100,10 +100,11 @@ nav a:hover {
 }
 
 .modal-image {
-  margin: 0 auto;
-  border-radius: 10px;
-  width: 50%;
-  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 70px auto 40px auto;
 }
 
 .movie-banner img {
@@ -114,7 +115,6 @@ nav a:hover {
 }
 
 .modal-image img {
-
   width: 300px;
   height: 300px;
   border: 1px solid black;
@@ -243,14 +243,6 @@ footer {
 .mclose-btn:hover {
   background-color: black;
   color: #fff;
-}
-
-.modal-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-  margin: 70px auto 40px auto;
 }
 
 .comment-li {
