@@ -23,7 +23,6 @@ const getMovieData = async () => {
       imageSrc = myJson[i].show.image.medium;
     }
 
-    // const numLike = Number(getLikeForEach(movieId));
     let numLike = 0;
     getLikeForEach(movieId).then((num) => {
       numLike = num;
